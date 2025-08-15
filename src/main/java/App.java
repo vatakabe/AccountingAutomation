@@ -12,11 +12,11 @@ public class App {
             switch(line){
                 case "1": {
                     reports.readMonthlyReports();
-                    continue;
+                    break;
                 }
                 case "2": {
                     reports.readYearlyReports();
-                    continue;
+                    break;
                 }
                 case "3": break;
                 case "4": break;

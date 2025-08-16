@@ -18,9 +18,14 @@ public class App {
                     reports.readYearlyReports();
                     break;
                 }
-                case "3": break;
-                case "4": break;
-                case "5": break;
+                case "3": {
+                    reports.reconcillation();
+                    break;
+                }
+                case "4": {
+                    reports.getMonthlyReports().forEach( v -> System.out.println(v.getInformation()) );
+                    break;
+                }
                 default:
                     System.out.println("Введите цифру");
                     continue;
@@ -35,6 +40,5 @@ public class App {
         System.out.println("2:Считать годовой отчет");
         System.out.println("3:Сверить отчеты");
         System.out.println("4:Вывести информацию о всех месячных отчетах");
-        System.out.println("5:Вывести информацию о годовом отчете");
     }
 }

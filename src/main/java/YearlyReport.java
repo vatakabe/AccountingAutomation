@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,17 +20,33 @@ public class YearlyReport {
             report.add(new Item(month,amount,isExpense));
         }
     }
+
+    public List<Item> getReport() {
+        return report;
+    }
+
     static class Item{
-        private int month;
+        private MonthName month;
         private int amount;
         private boolean isExpense;
 
-        public Item(int month, int amount,boolean isExpense) {
-            this.month = month;
+        public Item(int intMonth, int amount,boolean isExpense) {
+            month = MonthName.getMonthNumber(intMonth);
             this.amount = amount;
             this.isExpense = isExpense;
         }
 
+        public MonthName getMonth() {
+            return month;
+        }
+
+        public int getAmount() {
+            return amount;
+        }
+
+        public boolean getIsExpense() {
+            return isExpense;
+        }
 
     }
 }
